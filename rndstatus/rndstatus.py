@@ -46,7 +46,7 @@ class RandomStatus(BaseCog):
         if statuses == () or "" in statuses:
             await ctx.author.send("Current statuses: " + " | ".join(self.statuses))
             return
-        statuses = list(statuses)
+        statuses = statuses.split(,)
         await self.config.statuses.set(statuses)
         await self.bot.change_presence(status=current_status)
         await ctx.send("Done. Redo this command with no parameters to see the current list of statuses.")
