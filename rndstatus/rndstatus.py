@@ -42,7 +42,7 @@ class RandomStatus(BaseCog):
         Example:
         !rndstatus set \"Tomb Raider II\" \"Transistor\" \"with your heart.\"
         Shows current list if empty."""
-        current_status = ctx.message.server.me.status
+        current_status = ctx.message.guild.me.status
         if statuses == () or "" in statuses:
             await self.bot.whisper("Current statuses: " + " | ".join(self.statuses))
             return
