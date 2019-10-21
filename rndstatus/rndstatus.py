@@ -5,9 +5,9 @@ from random import choice as rndchoice
 import os
 import time
 
-Cog: Any = getattr(commands, "Cog", object)
+BaseCog = getattr(commands, "Cog", object)
 
-class RandomStatus:
+class RandomStatus(BaseCog):
     """Cycles random statuses
 
     If a custom status is already set, it won't change it until
