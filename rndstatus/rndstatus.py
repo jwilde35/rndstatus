@@ -46,7 +46,7 @@ class RandomStatus(BaseCog):
         if statuses == () or "" in statuses:
             await self.bot.whisper("Current statuses: " + " | ".join(self.statuses))
             return
-        self.statuses = list(statuses)
+        self.statuses = await list(statuses)
         await self.config.statuses.set(self.statuses)
         await self.bot.change_presence(status=current_status)
         await ctx.send("Done. Redo this command with no parameters to see the current list of statuses.")
@@ -58,7 +58,6 @@ class RandomStatus(BaseCog):
 
         Must be 20 or superior."""
         if seconds < 20:
-            await send_cmd_help(ctx)
             return
         await self.config.settings.DELAY.set(seconds)
         await ctx.send("Interval set to {}".format(str(seconds)))
