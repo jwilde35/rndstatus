@@ -5,12 +5,14 @@ from random import choice as rndchoice
 import os
 import time
 
+Cog: Any = getattr(commands, "Cog", object)
+
 class RandomStatus:
     """Cycles random statuses
 
     If a custom status is already set, it won't change it until
     it's back to none. (!set status)"""
-
+    
     def __init__(self, bot):
         self.bot = bot
         self.config = Config.get_conf(self, identifier=4530825458)
