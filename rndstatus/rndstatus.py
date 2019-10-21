@@ -60,7 +60,7 @@ class RandomStatus(BaseCog):
         if seconds < 20:
             await send_cmd_help(ctx)
             return
-        await self.config.settings.set(seconds)
+        await self.config.settings.DELAY.set(seconds)
         await self.bot.say("Interval set to {}".format(str(seconds)))
 
     async def switch_status(self, message):
