@@ -31,8 +31,7 @@ class RandomStatus(BaseCog):
     @commands.group(pass_context=True)
     @checks.is_owner()
     async def rndstatus(self, ctx):
-        if ctx.invoked_subcommand is None:
-            await send_cmd_help(ctx)
+        pass
 
     @rndstatus.command(name="set", pass_context=True, no_pm=True)
     async def _set(self, ctx, *statuses : str):
