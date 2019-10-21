@@ -1,5 +1,6 @@
 from redbot.core import commands
 from redbot.core import checks
+from redbot.core import Config
 from random import choice as rndchoice
 import os
 import time
