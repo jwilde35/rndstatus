@@ -14,7 +14,7 @@ class RandomStatus:
     def __init__(self, bot):
         self.bot = bot
         self.config = Config.get_conf(self, identifier=4530825458)
-        self.statuses = self.conf.statuses()
+        self.statuses = self.config.statuses()
         self.last_change = None
         default_global = {
             "statuses": [],
