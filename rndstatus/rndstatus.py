@@ -49,7 +49,7 @@ class RandomStatus(BaseCog):
         self.statuses = list(statuses)
         await self.config.statuses.set(self.statuses)
         await self.bot.change_presence(status=current_status)
-        await self.bot.say("Done. Redo this command with no parameters to see the current list of statuses.")
+        await ctx.say("Done. Redo this command with no parameters to see the current list of statuses.")
 
 
     @rndstatus.command(pass_context=True)
@@ -61,7 +61,7 @@ class RandomStatus(BaseCog):
             await send_cmd_help(ctx)
             return
         await self.config.settings.DELAY.set(seconds)
-        await self.bot.say("Interval set to {}".format(str(seconds)))
+        await ctx.send("Interval set to {}".format(str(seconds)))
 
     async def switch_status(self, message):
         if not message.channel.is_private:
