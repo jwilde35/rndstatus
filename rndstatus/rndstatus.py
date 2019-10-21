@@ -1,8 +1,4 @@
-import discord
-from discord.ext import commands
-from .utils.dataIO import fileIO
-from .utils import checks
-from __main__ import send_cmd_help
+from redbot.core import commands
 from random import choice as rndchoice
 import os
 import time
