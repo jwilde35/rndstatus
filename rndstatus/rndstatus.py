@@ -49,7 +49,7 @@ class RandomStatus(BaseCog):
         self.statuses = list(statuses)
         await self.config.statuses.set(self.statuses)
         await self.bot.change_presence(status=current_status)
-        await ctx.say("Done. Redo this command with no parameters to see the current list of statuses.")
+        await ctx.send("Done. Redo this command with no parameters to see the current list of statuses.")
 
 
     @rndstatus.command(pass_context=True)
